@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         Log.d("@@@", "The random number is: ${randomWhen()}")
+        loots()
 
     }
 
@@ -65,4 +66,29 @@ class MainActivity : AppCompatActivity() {
         }
         return oneOfFive
     }
+
+    private fun loots() {
+        val lootNames = listOf("Саша", "Маша", "Гоша", "Петя", "Варя", "Вика", "Леша", "Миша")
+
+        Log.d("@@@", "---------------------------------------------")
+
+        lootNames.forEach {
+            Log.d("@@@", it)
+        }
+
+        Log.d("@@@", "---------------------------------------------")
+
+        for (i in lootNames.indices step 2) {
+            Log.d("@@@", lootNames[i])
+        }
+
+        Log.d("@@@", "---------------------------------------------")
+
+        repeat(lootNames.size) {
+            Log.d("@@@", "$it")
+        }
+
+    }
 }
+
+
