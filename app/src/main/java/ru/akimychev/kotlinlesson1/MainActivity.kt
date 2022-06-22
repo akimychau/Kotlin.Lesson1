@@ -1,6 +1,7 @@
 package ru.akimychev.kotlinlesson1
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        Log.d("@@@", "The random number is: ${randomWhen()}")
 
     }
 
@@ -46,5 +48,21 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this@MainActivity, "My name is ${me.name} ${me.surname}", Toast.LENGTH_SHORT)
             .show()
+    }
+
+    private fun randomWhen(): String {
+
+        val oneOfFive = when ((0..5).random()) {
+            0 -> "Zero"
+            1 -> "One"
+            2 -> "Two"
+            3 -> "Three"
+            4 -> "Four"
+            5 -> "Five"
+            else -> {
+                "Nothing"
+            }
+        }
+        return oneOfFive
     }
 }
