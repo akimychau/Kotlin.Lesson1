@@ -2,5 +2,5 @@
     <string name="app_name">Kotlin.Lesson1</string>
     <string name="click_me">Click me</string>
     <string name="what_is_your_name">What is your name?</string>
-    <string name="where_are_you_from">Where are you from?</string>
+    <string name="what_is_your_surname">What is your surname?</string>
 </resources>

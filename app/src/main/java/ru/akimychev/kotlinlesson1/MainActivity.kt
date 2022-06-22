@@ -24,13 +24,27 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //Кидает тост-приветсвие с использованием имени и места человека
-    fun sayHello (){
+    //Кидает тост-приветсвие с использованием имени и места человека (person копирует объект me)
+    fun sayHello() {
+
+        val me = Person()
+
         val name = findViewById<EditText>(R.id.name).text
-        val place = findViewById<EditText>(R.id.place).text
+        val surname = findViewById<EditText>(R.id.surname).text
 
-        val person = Person(name.toString(), place.toString())
+        val person = if (name.toString() == "" && surname.toString() == "") {
+            me.copy()
+        } else {
+            me.copy(name = name.toString(), surname = surname.toString())
+        }
 
-        Toast.makeText(this@MainActivity, "Hello, ${person.name} from ${person.place}!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this@MainActivity,
+            "Hello, ${person.name} ${person.surname}!",
+            Toast.LENGTH_SHORT
+        ).show()
+
+        Toast.makeText(this@MainActivity, "My name is ${me.name} ${me.surname}", Toast.LENGTH_SHORT)
+            .show()
     }
 }
